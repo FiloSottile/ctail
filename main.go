@@ -124,6 +124,7 @@ func downloadJSON(url string) ([]byte, *http.Response, error) {
 		return []byte{}, nil, err
 	}
 
+	req.Header.Set("User-Agent", "ctail (+https://github.com/hdm/ctail)")
 	req.Header.Set("Accept", "application/json")
 
 	tr := &http.Transport{
